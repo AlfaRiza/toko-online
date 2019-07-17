@@ -10,7 +10,7 @@
     <meta name="author" content="">
 
     <link rel="shortcut icon" href="<?= base_url('assets/img/logo.png'); ?>">
-    <title>Toko Online</title>
+    <title><?= $judul; ?></title>
 
     <!-- Custom fonts for this template-->
     <link href="<?= base_url('assets/'); ?>vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
