@@ -30,7 +30,7 @@
                     <h5 class="card-title mb-1"><?= $brg->nama_brg; ?></h5>
                     <small><?= $brg->keterangan; ?></small> <br>
                     <span class="badge badge-pill badge-success mb-3">Rp.<?= $brg->harga; ?></span>
-                    <a href="#" class="btn btn-sm btn-primary mb-0">Tambah ke keranjang</a>
+                    <?= anchor('dashboard/tambah_keranjang/' . $brg->id_brg, '<div class="btn btn-sm btn-primary">Tambah ke keranjang</div>') ?>
                     <a href="#" class="btn btn-sm btn-success mb-0">Detail</a>
                 </div>
             </div>
