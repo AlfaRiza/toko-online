@@ -21,7 +21,12 @@
             </tr>
         <?php endforeach; ?>
         <tr>
-            <td colspan="5" align="right">Rp. <?= number_format($items['subtotal'], 0, ',', '.'); ?></td>
+            <td colspan="5" align="right">Rp. <?= number_format($this->cart->total(), 0, ',', '.'); ?></td>
         </tr>
     </table>
+    <div class="text-right">
+        <a class="btn btn-sm btn-danger" href="<?= base_url('dashboard/hapus_keranjang'); ?>" onclick="javascript: confirm('Yakin?')">Hapus Keranjang</a>
+        <a class="btn btn-sm btn-primary" href="<?= base_url('dashboard/index'); ?>">Lanjutkan Belanja</a>
+        <a class="btn btn-sm btn-success" href="<?= base_url('dashboard/pembayaran'); ?>">Pembayaran</a>
+    </div>
 </div>
