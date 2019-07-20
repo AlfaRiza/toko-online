@@ -7,7 +7,7 @@
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
       <!-- Sidebar - Brand -->
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?= base_url('dashboard'); ?>">
         <div class="sidebar-brand-icon">
           <i class="fas fa-store"></i>
         </div>
@@ -125,7 +125,7 @@
                   <?php
                   $keranjang = 'Keranjang Belanja: ' . $this->cart->total_items() . ' items';
                   ?>
-                  <?= $keranjang; ?>
+                  <?= anchor('dashboard/detail_keranjang', $keranjang); ?>
                 </li>
               </ul>
             </div>
