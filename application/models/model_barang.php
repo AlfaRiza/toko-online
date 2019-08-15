@@ -4,7 +4,7 @@ class model_barang extends CI_Model
 {
     public function tampilData()
     {
-        return $this->db->get('tb_barang');
+        return $this->db->get('tb_barang')->result_array();
     }
 
     public function tambah_barang($data, $table)
@@ -39,6 +39,16 @@ class model_barang extends CI_Model
             return $result->row();
         } else {
             return array();
+        }
+    }
+
+    public function detail_brg($id_brg)
+    {
+        $result = $this->db->get_where('tb_barang', ['id_brg' => $id_brg]);
+        if ($result->num_rows() > 0) {
+            return $result->result_array();
+        } else {
+            return false;
         }
     }
 }

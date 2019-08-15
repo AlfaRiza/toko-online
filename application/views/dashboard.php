@@ -24,16 +24,16 @@
     </div>
     <div class="row text-center mt-3">
         <?php foreach ($barang as $brg) : ?>
-            <div class="card ml-3" style="width: 16rem;">
-                <img src="<?= base_url('uploads/' . $brg->gambar) ?>" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title mb-1"><?= $brg->nama_brg; ?></h5>
-                    <small><?= $brg->keterangan; ?></small> <br>
-                    <span class="badge badge-pill badge-success mb-3">Rp.<?= number_format($brg->harga, 0, ',', '.'); ?></span>
-                    <?= anchor('dashboard/tambah_keranjang/' . $brg->id_brg, '<div class="btn btn-sm btn-primary">Tambah ke keranjang</div>') ?>
-                    <a href="#" class="btn btn-sm btn-success mb-0">Detail</a>
-                </div>
+        <div class="col card ml-3" style="width: 16rem;">
+            <img src="<?= base_url('uploads/' . $brg['gambar']) ?>" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title mb-1"><?= $brg['nama_brg']; ?></h5>
+                <small><?= $brg['keterangan']; ?></small> <br>
+                <span class="badge badge-pill badge-success mb-3">Rp.<?= number_format($brg['harga'], 0, ',', '.'); ?></span>
+                <?= anchor('dashboard/tambah_keranjang/' . $brg['id_brg'], '<div class="btn btn-sm btn-primary">Tambah ke keranjang</div>') ?>
+                <a href="<?= base_url('dashboard/detail/' . $brg['id_brg']) ?>" class="btn btn-sm btn-success mb-0">Detail</a>
             </div>
+        </div>
         <?php endforeach; ?>
     </div>
 </div>

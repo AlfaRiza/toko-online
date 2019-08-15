@@ -3,7 +3,7 @@ class dashboard extends CI_Controller
 {
     public function index()
     {
-        $data['barang'] = $this->model_barang->tampilData()->result();
+        $data['barang'] = $this->model_barang->tampilData();
         $data['judul'] = 'Home';
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar');
@@ -60,6 +60,16 @@ class dashboard extends CI_Controller
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar');
         $this->load->view('proses_pesanan');
+        $this->load->view('templates/footer');
+    }
+
+    public function detail($id_brg)
+    {
+        $data['judul'] = 'Detail';
+        $data['barang'] =  $this->model_barang->detail_brg($id_brg);
+        $this->load->view('templates/header', $data);
+        $this->load->view('templates/sidebar');
+        $this->load->view('detail_barang', $data);
         $this->load->view('templates/footer');
     }
 }
