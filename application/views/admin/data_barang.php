@@ -18,21 +18,21 @@
             $no = 1;
             foreach ($barang as $brg) : ?>
 
-                <tr>
-                    <td><?= $no++; ?></td>
-                    <td><?= $brg->nama_brg; ?></td>
-                    <td><?= $brg->keterangan; ?></td>
-                    <td><?= $brg->kategori; ?></td>
-                    <td><?= $brg->harga; ?></td>
-                    <td><?= $brg->stok; ?></td>
-                    <td> <?= anchor('admin/data_barang/detail/' . $brg->id_brg, '<div class="btn btn-sm btn-primary"> <i class="fas fa-search-plus"></i> </div>'); ?>
-                    </td>
-                    <td> <?= anchor('admin/data_barang/edit/' . $brg->id_brg, '<div class="btn btn-sm btn-success"> <i class="fas fa-edit"></i> </div>'); ?>
-                    </td>
-                    <td>
-                        <?= anchor('admin/data_barang/hapus/' . $brg->id_brg, '<div class="btn btn-sm btn-danger"> <i class="fas fa-trash"></i> </div>'); ?>
-                    </td>
-                </tr>
+            <tr>
+                <td><?= $no++; ?></td>
+                <td><?= $brg['nama_brg']; ?></td>
+                <td><?= $brg['keterangan']; ?></td>
+                <td><?= $brg['kategori']; ?></td>
+                <td><?= $brg['harga']; ?></td>
+                <td><?= $brg['stok']; ?></td>
+                <td> <?= anchor('admin/data_barang/detail/' . $brg['id_brg'], '<div class="btn btn-sm btn-primary"> <i class="fas fa-search-plus"></i> </div>'); ?>
+                </td>
+                <td> <?= anchor('admin/data_barang/edit/' . $brg['id_brg'], '<div class="btn btn-sm btn-success"> <i class="fas fa-edit"></i> </div>'); ?>
+                </td>
+                <td>
+                    <?= anchor('admin/data_barang/hapus/' . $brg['id_brg'], '<div class="btn btn-sm btn-danger"> <i class="fas fa-trash"></i> </div>'); ?>
+                </td>
+            </tr>
 
             <?php endforeach; ?>
         </tbody>
@@ -61,7 +61,13 @@
                     </div>
                     <div class="form-group">
                         <label for="kategori">Kategori</label>
-                        <input type="text" name="kategori" id="kategori" class="form-control">
+                        <select class="form-control" name="kategori" id="kategori">
+                            <option value="Elektronik">Elektronik</option>
+                            <option value="Pakaian Pria">Pakaian Pria</option>
+                            <option value="Pakaian Wanita">Pakaian Wanita</option>
+                            <option value="Pakaian Anak">Pakaian Anak</option>
+                            <option value="Olahraga">Perlengkapan Olahraga</option>
+                        </select>
                     </div>
                     <div class="form-group">
                         <label for="harga">Harga</label>
