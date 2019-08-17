@@ -31,7 +31,7 @@
           <span>Data Barang</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="<?= base_url('admin/data_barang'); ?>">
+        <a class="nav-link" href="<?= base_url('admin/invoice'); ?>">
           <i class="fas fa-fw fa-file-invoice"></i>
           <span>Invoice</span></a>
       </li>

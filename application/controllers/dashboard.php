@@ -56,11 +56,18 @@ class dashboard extends CI_Controller
     {
         $data['judul'] = 'Proses Pesanan';
 
-        $this->cart->destroy();
-        $this->load->view('templates/header', $data);
-        $this->load->view('templates/sidebar');
-        $this->load->view('proses_pesanan');
-        $this->load->view('templates/footer');
+        // input ke db
+        $is_process = $this->model_invoice->index();
+
+        if ($is_process) {
+            $this->cart->destroy();
+            $this->load->view('templates/header', $data);
+            $this->load->view('templates/sidebar');
+            $this->load->view('proses_pesanan');
+            $this->load->view('templates/footer');
+        } else {
+            echo ' pesanan anda gagal di proses';
+        }
     }
 
     public function detail($id_brg)
